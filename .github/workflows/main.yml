@@ -26,6 +26,10 @@ jobs:
       shell: bash -l {0}
       run: conda install -c defusco ae5-tools=0.4.1+21 -y
     - name: Post Metadata
+      env:
+        AE5_HOSTNAME: ${{ secrets.AE5_HOSTNAME }}
+        AE5_USERNAME: ${{ secrets.AE5_USERNAME }}
+        AE5_PASSWORD: ${{ secrets.AE5_PASSWORD }}
       shell: bash -l {0}
-      run: ae5 post revision-metadata --hostname ${{ secrets.AE5_HOSTNAME }} --username ${{ secrets.AE5_USERNAME }} --password ${{ secrets.AE5_PASSWORD }}
+      run: ae5 post revision-metadata --hostname $AE5_HOSTNAME --username  $AE5_USERNAME --password AE5_PASSWORD
 
