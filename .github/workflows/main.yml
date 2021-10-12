@@ -32,4 +32,4 @@ jobs:
         AE5_PASSWORD: ${{ secrets.AE5_PASSWORD }}
         AE5_PROJECT_ID: ${{ secrets.AE5_PROJECT_ID }}
       shell: bash -l {0}
-      run: ae5 post revision-metadata --project-id $PROJECT_ID --hostname $AE5_HOSTNAME --username  $AE5_USERNAME --password $AE5_PASSWORD 
+      run: ae5 post revision-metadata --project-id $AE5_PROJECT_ID --hostname $AE5_HOSTNAME --username  $AE5_USERNAME --password $AE5_PASSWORD 
