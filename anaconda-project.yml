@@ -1,6 +1,10 @@
 name: Python 3.8
 description: Minimal Python 3.8 project.
 
+commands:
+  default:
+    unix: python -m http.server 8086
+
 packages:
   - python=3.8
   - ipykernel
