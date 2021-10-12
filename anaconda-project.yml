@@ -1,0 +1,12 @@
+name: Python 3.8
+description: Minimal Python 3.8 project.
+
+packages:
+  - python=3.8
+  - ipykernel
+
+platforms:
+  - linux-64
+
+env_specs:
+  python_38: {}
