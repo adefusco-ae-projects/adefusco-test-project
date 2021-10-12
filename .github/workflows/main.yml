@@ -9,7 +9,7 @@ on:
     tags:
       - '*'
 jobs:
-  metadata:
+  post-metadata:
     runs-on: ubuntu-latest
     steps:
     - name: Retrieve the source code
