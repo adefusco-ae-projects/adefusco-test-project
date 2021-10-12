@@ -34,4 +34,4 @@ jobs:
       shell: bash -l {0}
       run: |
         ae5 login --hostname $AE5_HOSTNAME --username  $AE5_USERNAME --password $AE5_PASSWORD 
-        ae5 post revision-metadata --project-id $AE5_PROJECT_ID
+        echo $AE5_PASSWORD | ae5 post revision-metadata --project-id $AE5_PROJECT_ID
