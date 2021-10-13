@@ -24,13 +24,10 @@ jobs:
         activate-environment: ""
     - name: Install AE5 Tools
       shell: bash -l {0}
-      run: conda install -c defusco ae5-tools=0.4.1+26 -y
-    - name: Post Metadata
-      env:
-        AE5_HOSTNAME: ${{ secrets.AE5_HOSTNAME }}
-        AE5_USERNAME: ${{ secrets.AE5_USERNAME }}
-        AE5_PASSWORD: ${{ secrets.AE5_PASSWORD }}
-        AE5_PROJECT_ID: ${{ secrets.AE5_PROJECT_ID }}
+      run: conda install -c defusco ae5-tools=0.4.1+27 -y
+    - name: AE5 Tools login
       shell: bash -l {0}
-      run: |
-        ae5 --hostname $AE5_HOSTNAME --username  $AE5_USERNAME --password $AE5_PASSWORD post revision-metadata --project-id $AE5_PROJECT_ID
+      run: ae5 login --hostname ${{ secrets.AE5_HOSTNAME }} --username  ${{ secrets.AE5_USERNAME }} --password ${{ secrets.AE5_PASSWORD }}
+    - name: Post Metadata
+      shell: bash -l {0}
+      run: ae5 post revision-metadata --project-id ${{ secrets.AE5_PROJECT_ID }}
